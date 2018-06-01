@@ -1,3 +1,9 @@
-<p>
-  week works!
-</p>
+<div class="container-weekly-view">
+  <div class="header">
+    <div class="column-hour">hour</div>
+    <div *ngFor="let weekDay of daysOfTheWeek" class="column-day">day</div>
+  </div>
+  <div class="main">
+    <weekly-rows></weekly-rows>
+  </div>
+</div>

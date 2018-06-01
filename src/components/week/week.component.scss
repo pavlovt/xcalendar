@@ -1,0 +1,14 @@
+.container-weekly-view {
+
+    .header {
+      display: flex;
+  
+      .column-day {
+        flex: 4;
+      }
+    
+      .column-hour {
+        flex: 1;
+      }
+    }
+}

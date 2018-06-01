@@ -7,6 +7,8 @@ import { PeriodComponent } from '../components/period/period.component';
 import { DayComponent } from '../components/day/day.component';
 import { MonthComponent } from '../components/month/month.component';
 import { WeekComponent } from '../components/week/week.component';
+import { WeeklyRowsComponent } from '../components/week/components/weekly-rows/weekly-rows.component';
+import { WeeklyRowComponent } from '../components/week/components/weekly-row/weekly-row.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { WeekComponent } from '../components/week/week.component';
     PeriodComponent,
     WeekComponent,
     MonthComponent,
-    DayComponent
+    DayComponent,
+    WeeklyRowsComponent,
+    WeeklyRowComponent
   ],
   imports: [
     CommonModule
