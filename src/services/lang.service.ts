@@ -10,7 +10,6 @@ export class LangService {
   }
 
   get(name: string) {
-  	console.log(this.conf.lang)
   	return langs[this.conf.lang][name] || name;
   }
 
