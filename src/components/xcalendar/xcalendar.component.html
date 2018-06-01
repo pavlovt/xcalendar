@@ -1,9 +1,9 @@
 <div class="xcalendar">
 	<div class="goto">Prev | Today | Next</div>
 	<div>
-		<button (click)="switchPeriod('d')">Day</button>
-		<button (click)="switchPeriod('w')">Week</button>
-		<button (click)="switchPeriod('m')">Month</button>
+		<button (click)="switchPeriod('d')">{{ 'Day' | t}}</button>
+		<button (click)="switchPeriod('w')">{{ 'Week' | t}}</button>
+		<button (click)="switchPeriod('m')">{{ 'Month' | t}}</button>
 	</div>
 	<period [selectedPeriod]="selectedPeriod"></period>
 </div>
