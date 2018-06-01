@@ -10,9 +10,9 @@ import { WeekComponent } from '../components/week/week.component';
 import { WeeklyRowsComponent } from '../components/week/components/weekly-rows/weekly-rows.component';
 import { WeeklyRowComponent } from '../components/week/components/weekly-row/weekly-row.component';
 
-import { LangService } from '../services/lang.service'
+import { LangService } from '../services/lang.service';
 import { conf, AppConf } from '../services/conf';
-import { TranslatePipe } from '../services/lang.pipe'
+import { TranslatePipe } from '../services/lang.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { TranslatePipe } from '../services/lang.pipe'
     CommonModule
   ],
   providers: [
-    LangService, 
+    LangService,
     { provide: conf, useValue: AppConf }
   ],
   exports: [XCalendarComponent]

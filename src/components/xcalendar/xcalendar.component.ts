@@ -1,23 +1,23 @@
-import { Component, Input, Inject } from '@angular/core';
-import { LangService } from '../../services/lang.service'
+import { Component, Input, Inject, OnInit } from '@angular/core';
+import { LangService } from '../../services/lang.service';
 import { conf, AppConf } from '../../services/conf';
-import langs from '../../langs'
+import langs from '../../langs';
 
 @Component({
   selector: 'xcalendar',
   templateUrl: './xcalendar.component.html',
   // styleUrls: ['./xcalendar.component.css']
 })
-export class XCalendarComponent {
+export class XCalendarComponent implements OnInit {
   @Input() lang ? = 'en';
 
   public selectedPeriod = 'w';
 
-  constructor(lang: LangService, @Inject(conf) private conf: any) {
+  constructor(lang: LangService, @Inject(conf) private config: any) {
   }
 
   ngOnInit() {
-  	this.conf.lang = this.lang;
+    this.config.lang = this.lang;
   }
 
   public switchPeriod(periodId: string): void {
