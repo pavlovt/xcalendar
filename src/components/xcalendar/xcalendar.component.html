@@ -5,5 +5,9 @@
 		<button (click)="switchPeriod('w')">{{ 'Week' | t}}</button>
 		<button (click)="switchPeriod('m')">{{ 'Month' | t}}</button>
 	</div>
-	<period [selectedPeriod]="selectedPeriod"></period>
+	<div [ngSwitch]="selectedPeriod">
+		<day *ngSwitchCase="'d'"></day>
+		<week *ngSwitchCase="'w'" [initHourValue]="dayWeekInitHour"></week>
+		<month *ngSwitchCase="'m'"></month>
+	</div>
 </div>

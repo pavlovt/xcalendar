@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { TimeService } from '../../services/time.service';
 
 @Component({
   selector: 'week',
@@ -6,12 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./week.component.scss']
 })
 export class WeekComponent implements OnInit {
+  @Input() initHourValue = 0;
   public daysOfTheWeek = [];
-  constructor() {
+  public hours = [];
+
+  constructor(
+    private timeService: TimeService
+  ) {
     this.daysOfTheWeek = new Array(7);
+    this.hours = this.timeService.generateHourLabels(this.initHourValue);
   }
 
   ngOnInit() {
+    console.log(this.hours);
   }
 
 }
