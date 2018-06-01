@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'weekly-rows',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./weekly-rows.component.scss']
 })
 export class WeeklyRowsComponent implements OnInit {
+  @Input() hourLabelValues: Array<string>;
   public rows = new Array(24);
 
   constructor() { }
