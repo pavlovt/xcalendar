@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./weekly-row.component.scss']
 })
 export class WeeklyRowComponent implements OnInit {
-
+  public days = new Array(7);
   constructor() { }
 
   ngOnInit() {
