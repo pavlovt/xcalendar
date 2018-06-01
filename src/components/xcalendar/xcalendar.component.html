@@ -1,4 +1,9 @@
 <div class="xcalendar">
 	<div class="goto">Prev | Today | Next</div>
-	<ng-content></ng-content>
+	<div>
+		<button (click)="switchPeriod('d')">Day</button>
+		<button (click)="switchPeriod('w')">Week</button>
+		<button (click)="switchPeriod('m')">Month</button>
+	</div>
+	<period [selectedPeriod]="selectedPeriod"></period>
 </div>

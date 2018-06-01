@@ -6,6 +6,11 @@ import { Component, Input } from '@angular/core';
   // styleUrls: ['./xcalendar.component.css']
 })
 export class XCalendarComponent {
+  @Input() lang ? = 'en';
 
-  @Input() lang? = 'en';
+  public selectedPeriod = 'w';
+
+  public switchPeriod(periodId: string): void {
+    this.selectedPeriod = periodId;
+  }
 }
