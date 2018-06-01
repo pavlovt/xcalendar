@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppointmentService } from '../services/appointment.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  data = [];
+  constructor(appointments: AppointmentService) {
+  	this.data = appointments.getData()
+  }
 }

@@ -10,6 +10,7 @@ import langs from '../../langs';
 })
 export class XCalendarComponent implements OnInit {
   @Input() lang ? = 'en';
+  @Input() data ? = [];
 
   public selectedPeriod = 'w';
 
