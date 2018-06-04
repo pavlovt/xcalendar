@@ -1,14 +1,37 @@
 .day-view {
-	.day-hour-view {
-		display: flex;
-		height: 50px;
-		width: 100%;
-		.hour {
-			flex: 1;
+	.day-container {
+		position: relative;
+		.day-hour-view-container {
+			position: relative;
+			.day-hour-view {
+				display: flex;
+				height: 50px;
+				width: 100%;
+				.hour {
+					flex: 1;
+				}
+				.day {
+					flex: 12;
+					border-top: 1px solid #DCDCDC;
+				}
+			}
 		}
-		.day {
-			flex: 12;
-			border-top: 1px solid #DCDCDC;
+		.day-data-container {
+			z-index: 1;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			.relative-container {
+				position: relative;
+				width: 100%;
+				height: 1200px;
+				.data-point {
+					position: absolute; 
+					top: 20px; 
+					left: 200px;
+				}
+			}
 		}
 	}
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TimeService } from '../../services/time.service';
 
 @Component({
@@ -7,8 +7,9 @@ import { TimeService } from '../../services/time.service';
   styleUrls: ['./day.component.scss']
 })
 export class DayComponent implements OnInit {
-	hours = []
-	selectedDay = new Date();
+  @Input() allData = [];
+  hours = [];
+  selectedDay = new Date();
   constructor(
     private timeService: TimeService
   ) {

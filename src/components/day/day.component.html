@@ -1,7 +1,21 @@
 <div class="day-view">
-	<h2>{{selectedDay | date}}</h2>
-	<div class="day-hour-view" *ngFor="let hour of hours">
-		<div class="hour">{{hour}}</div>
-		<div class="day"></div>		
-	</div>
+  <h2>{{selectedDay | date}}</h2>
+  
+  <div class="day-container">
+    
+    <div class="day-hour-view-container">
+      <div class="day-hour-view" *ngFor="let hour of hours">
+        <div class="hour">{{hour}}</div>
+        <div class="day"></div>
+      </div>
+    </div>
+    
+    <div class="day-data-container">
+      <div class="relative-container">
+        <div class="data-point">aaaa</div>
+      </div>
+    </div>
+
+  </div>
+
 </div>
