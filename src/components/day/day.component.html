@@ -1,5 +1,6 @@
 <div class="day-view">
-	<div class="day-hour-view" *ngFor="let hour of hours; let i = index">
+	<h2>{{selectedDay | date}}</h2>
+	<div class="day-hour-view" *ngFor="let hour of hours">
 		<div class="hour">{{hour}}</div>
 		<div class="day"></div>		
 	</div>

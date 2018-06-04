@@ -13,7 +13,7 @@ export class XCalendarComponent implements OnInit {
   @Input() data ? = [];
   @Input() dayWeekInitHour = 0;
 
-  public selectedPeriod = 'w';
+  public selectedPeriod = 'd';
 
   constructor(lang: LangService, @Inject(conf) private config: any) {
   }

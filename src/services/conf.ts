@@ -5,5 +5,9 @@ export let conf = new InjectionToken("conf");
 declare var $;
 
 export const AppConf = {
-    lang: 'en'
+    lang: 'en',
+    datetimeFormat: 'YYYY-MM-DD HH:mm',
+    dateFormat: 'YYYY-MM-DD',
+    hourFormat: 'HH:mm',
+
 };

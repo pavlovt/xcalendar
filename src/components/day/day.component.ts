@@ -8,6 +8,7 @@ import { TimeService } from '../../services/time.service';
 })
 export class DayComponent implements OnInit {
 	hours = []
+	selectedDay = new Date();
   constructor(
     private timeService: TimeService
   ) {

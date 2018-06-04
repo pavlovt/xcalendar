@@ -13,6 +13,7 @@ import { LangService } from '../services/lang.service';
 import { TimeService } from '../services/time.service';
 import { conf, AppConf } from '../services/conf';
 import { TranslatePipe } from '../services/lang.pipe';
+import { DatePipe } from '../services/date.pipe';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { TranslatePipe } from '../services/lang.pipe';
     MonthComponent,
     DayComponent,
     TranslatePipe,
+    DatePipe,
     WeeklyRowsComponent,
     WeeklyRowComponent,
   ],
