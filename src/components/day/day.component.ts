@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { TimeService } from '../../services/time.service';
+import { conf, AppConf } from '../../services/conf';
+import * as moment from 'moment';
 
 @Component({
   selector: 'day',
@@ -8,15 +10,20 @@ import { TimeService } from '../../services/time.service';
 })
 export class DayComponent implements OnInit {
   @Input() allData = [];
+  data = [];
   hours = [];
   selectedDay = new Date();
   constructor(
-    private timeService: TimeService
+    private timeService: TimeService,
+    @Inject(conf) private conf: any
   ) {
     this.hours = this.timeService.generateHourLabels(0);
   }
 
   ngOnInit() {
+    const date = moment(this.selectedDay).format(this.conf.dateFormat)
+    // get the data for this day
+    this.data = this.allData.filter(v => moment(v.startTime).format(this.conf.dateFormat) === date)
   }
 
 }
