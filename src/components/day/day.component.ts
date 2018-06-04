@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TimeService } from '../../services/time.service';
 
 @Component({
   selector: 'day',
@@ -6,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./day.component.scss']
 })
 export class DayComponent implements OnInit {
-
-  constructor() { }
+	hours = []
+  constructor(
+    private timeService: TimeService
+  ) {
+    this.hours = this.timeService.generateHourLabels(0);
+  }
 
   ngOnInit() {
   }
