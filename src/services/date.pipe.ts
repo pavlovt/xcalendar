@@ -10,7 +10,9 @@ import * as moment from 'moment';
 export class DatePipe implements PipeTransform {
 
     constructor(@Inject(conf) private conf: any) { }
-
+    // format = datetime | date | hour | custom
+    // if format == custom then customFormat is used for the formatting
+    // else one of the config date formats are used
     transform(value: string, format: string, customFormat: string): any {
         if (!value) return;
         let fmt = '';
