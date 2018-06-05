@@ -9,5 +9,6 @@ export const AppConf = {
     datetimeFormat: 'YYYY-MM-DD HH:mm',
     dateFormat: 'YYYY-MM-DD',
     hourFormat: 'HH:mm',
+    pxPerHour: 50,
 
 };

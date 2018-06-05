@@ -6,7 +6,7 @@
 		<button (click)="switchPeriod('m')">{{ 'Month' | t}}</button>
 	</div>
 	<div [ngSwitch]="selectedPeriod">
-		<day *ngSwitchCase="'d'"></day>
+		<day *ngSwitchCase="'d'" [allData]="data"></day>
 		<week *ngSwitchCase="'w'" [initHourValue]="dayWeekInitHour"></week>
 		<month *ngSwitchCase="'m'"></month>
 	</div>

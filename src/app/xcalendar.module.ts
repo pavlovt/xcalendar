@@ -11,6 +11,7 @@ import { WeeklyRowComponent } from '../components/week/components/weekly-row/wee
 
 import { LangService } from '../services/lang.service';
 import { TimeService } from '../services/time.service';
+import { CoreService } from '../services/core.service';
 import { conf, AppConf } from '../services/conf';
 import { TranslatePipe } from '../services/lang.pipe';
 import { DatePipe } from '../services/date.pipe';
@@ -32,7 +33,8 @@ import { DatePipe } from '../services/date.pipe';
   providers: [
     LangService,
     { provide: conf, useValue: AppConf },
-    TimeService
+    TimeService,
+    CoreService,
   ],
   exports: [XCalendarComponent]
 })

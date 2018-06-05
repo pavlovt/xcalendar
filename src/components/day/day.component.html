@@ -12,7 +12,17 @@
     
     <div class="day-data-container">
       <div class="relative-container">
-        <div class="data-point">aaaa</div>
+        <div class="data-point" 
+          *ngFor="let item of data"
+          [style.background-color]="item.bgcolor"
+          [style.left]="(item.overlap.length * 5) + '%'"
+          [style.width]="(100 / item.overlap.length) + '%'"
+          [style.top]="startToPx(item.startDate) + 'px'"
+          [style.height]="lenToPx(item) + 'px'"
+          [style.z-index]="item.overlap.length + 1"
+          [style.min-height]="'20px'"
+          [attr.overlap]="item.overlap.length"
+        >{{item.title}}</div>
       </div>
     </div>
 
