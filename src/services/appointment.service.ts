@@ -7,11 +7,11 @@ export class AppointmentService {
 	data = []
   constructor() {}
 
-  getData(count = 50, start = -3, end = 3) {
+  getData(count = 10, start = -3, end = 3) {
   	let min;
   	let res = this.range(0, count, 1).map((v, i) => {
   		min = chance.date({min: moment().add(start, 'days').toDate(), max: moment().add(end, 'days').toDate()})
-  		// min = moment(moment().format('YYYY-MM-DD 00:00:00')).add(30 * i, 'minutes').toDate()
+  		min = moment(moment().format('YYYY-MM-DD 00:00:00')).add(10 * i, 'minutes').toDate()
   		return {
   			id: i+1,
   			title: chance.sentence(),
@@ -27,7 +27,13 @@ export class AppointmentService {
   		}).map(vv => vv.id);
   		v.bgcolor = chance.color({format: 'hex'});
   	})
-		// console.log(res.filter(v => v.overlap.length > 1))
+
+  	res.forEach((v:any) => {
+  		res.forEach((vv:any) => {
+  			if (this.intersect(v.overlap, vv.overlap).length >  0) v.overlap = v.overlap.concat(vv.overlap).filter(this.unique).sort()
+  		})
+  	})
+		
   	return res;
   }
 
@@ -38,6 +44,18 @@ export class AppointmentService {
 	        a.push(start);
 	    }
 	    return a;
+	}
+
+	intersect(a, b) {
+	    var t;
+	    if (b.length > a.length) t = b, b = a, a = t; // indexOf to loop over shorter
+	    return a.filter(function (e) {
+	        return b.indexOf(e) > -1;
+	    });
+	}
+
+	unique(value, index, self) { 
+	    return self.indexOf(value) === index;
 	}
 
 }
