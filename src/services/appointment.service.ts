@@ -23,7 +23,7 @@ export class AppointmentService {
   	// calc the overlaping appointments
   	res.forEach((v:any) => {
   		v.overlap = res.filter((vv:any) => {
-  			return (v.startDate.getTime() <= vv.endDate.getTime()) && (vv.startDate.getTime() <= v.endDate.getTime());
+  			return !(v.endDate.getTime() <= vv.startDate.getTime() || v.startDate.getTime() >= vv.endDate.getTime());
   		}).map(vv => vv.id);
   		v.bgcolor = chance.color({format: 'hex'});
   	})
